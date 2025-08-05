@@ -20,7 +20,7 @@ class Face_Recognition:
         # This part is image labels setting start 
         # first header image  
         img=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\banner2.png")
-        img=img.resize((1280,130),Image.ANTIALIAS)
+        img=img.resize((1280,130),Image.LANCZOS)
         self.photoimg=ImageTk.PhotoImage(img)
 
         # set image as lable
@@ -29,7 +29,7 @@ class Face_Recognition:
 
         # backgorund image 
         bg1=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\bg-reg.png")
-        bg1=bg1.resize((1200,520),Image.ANTIALIAS)
+        bg1=bg1.resize((1200,520),Image.LANCZOS)
         self.photobg1=ImageTk.PhotoImage(bg1)
 
         # set image as lable
@@ -45,7 +45,7 @@ class Face_Recognition:
         # ------------------------------------------------------------------------------------------------------------------- 
         # Training button 1
         """ std_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\f_det.jpg")
-        std_img_btn=std_img_btn.resize((180,180),Image.ANTIALIAS)
+        std_img_btn=std_img_btn.resize((180,180),Image.LANCZOS)
         self.std_img1=ImageTk.PhotoImage(std_img_btn)
 
         std_b1 = Button(bg_img,command=self.face_recog,image=self.std_img1,cursor="hand2")
@@ -81,7 +81,7 @@ class Face_Recognition:
                 id,predict=clf.predict(gray_image[y:y+h,x:x+w])
                 confidence=int((100*(1-predict/300)))
 
-                conn = mysql.connector.connect(user='root', password='2912002',host='localhost',database='face_recognition',port=3306)
+                conn = mysql.connector.connect(user='root', password='admin',host='localhost',database='face_recognition',port=3306)
                 cursor = conn.cursor()
 
                 cursor.execute("select Name from student where Student_ID="+str(id))
@@ -94,7 +94,7 @@ class Face_Recognition:
 
                 cursor.execute("select Student_ID from student where Student_ID="+str(id))
                 i=cursor.fetchone()
-                i="+".join(i)
+                i = "+".join(str(x) for x in i)
 
 
                 if confidence > 77:

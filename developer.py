@@ -17,7 +17,7 @@ class Developer:
 # This part is image labels setting start 
         # first header image  
         img=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\banner2.png")
-        img=img.resize((1280,130),Image.ANTIALIAS)
+        img=img.resize((1280,130),Image.LANCZOS)
         self.photoimg=ImageTk.PhotoImage(img)
 
         # set image as lable
@@ -26,7 +26,7 @@ class Developer:
 
         # backgorund image 
         bg1=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\bg4.jpg")
-        bg1=bg1.resize((1280,500),Image.ANTIALIAS)
+        bg1=bg1.resize((1280,500),Image.LANCZOS)
         self.photobg1=ImageTk.PhotoImage(bg1)
 
         # set image as lable
@@ -43,7 +43,7 @@ class Developer:
         # ------------------------------------------------------------------------------------------------------------------- 
         
         att_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\phong.jpg")
-        att_img_btn=att_img_btn.resize((250,250),Image.ANTIALIAS)
+        att_img_btn=att_img_btn.resize((250,250),Image.LANCZOS)
         self.att_img1=ImageTk.PhotoImage(att_img_btn)
 
         att_b1 = Button(bg_img,image=self.att_img1,cursor="hand2",)

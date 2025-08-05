@@ -32,7 +32,7 @@ class Register:
         
 
         # img1=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\reg1.png")
-        # img1=img1.resize((450,100),Image.ANTIALIAS)
+        # img1=img1.resize((450,100),Image.LANCZOS)
         # self.photoimage1=ImageTk.PhotoImage(img1)
         # lb1img1 = Label(image=self.photoimage1,bg="#F2F2F2")
         # lb1img1.place(x=350,y=100, width=500,height=100)
@@ -143,7 +143,7 @@ class Register:
         else:
             # messagebox.showinfo("Successfully","Successfully Register!")
             try:
-                conn = mysql.connector.connect(user='root', password='2912002',host='localhost',database='face_recognition',port=3306)
+                conn = mysql.connector.connect(user='root', password='admin',host='localhost',database='face_recognition',port=3306)
                 mycursor = conn.cursor()
                 query=("select * from regteach where email=%s")
                 value=(self.var_email.get(),)

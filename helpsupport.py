@@ -12,7 +12,7 @@ class Helpsupport:
 # This part is image labels setting start 
         # first header image  
         img=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\banner2.png")
-        img=img.resize((1280,130),Image.ANTIALIAS)
+        img=img.resize((1280,130),Image.LANCZOS)
         self.photoimg=ImageTk.PhotoImage(img)
 
         # set image as lable
@@ -21,7 +21,7 @@ class Helpsupport:
 
         # backgorund image 
         bg1=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\bg1.jpg")
-        bg1=bg1.resize((1280,500),Image.ANTIALIAS)
+        bg1=bg1.resize((1280,500),Image.LANCZOS)
         self.photobg1=ImageTk.PhotoImage(bg1)
 
         # set image as lable
@@ -37,7 +37,7 @@ class Helpsupport:
         # ------------------------------------------------------------------------------------------------------------------- 
         # student button 1
         std_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\web.png")
-        std_img_btn=std_img_btn.resize((180,180),Image.ANTIALIAS)
+        std_img_btn=std_img_btn.resize((180,180),Image.LANCZOS)
         self.std_img1=ImageTk.PhotoImage(std_img_btn)
 
         std_b1 = Button(bg_img,command=self.website,image=self.std_img1,cursor="hand2")
@@ -48,7 +48,7 @@ class Helpsupport:
 
         # Detect Face  button 2
         det_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\fb.png")
-        det_img_btn=det_img_btn.resize((180,180),Image.ANTIALIAS)
+        det_img_btn=det_img_btn.resize((180,180),Image.LANCZOS)
         self.det_img1=ImageTk.PhotoImage(det_img_btn)
 
         det_b1 = Button(bg_img,command=self.facebook,image=self.det_img1,cursor="hand2",)
@@ -59,7 +59,7 @@ class Helpsupport:
 
          # Attendance System  button 3
         att_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\yt.png")
-        att_img_btn=att_img_btn.resize((180,180),Image.ANTIALIAS)
+        att_img_btn=att_img_btn.resize((180,180),Image.LANCZOS)
         self.att_img1=ImageTk.PhotoImage(att_img_btn)
 
         att_b1 = Button(bg_img,command=self.youtube,image=self.att_img1,cursor="hand2",)
@@ -70,7 +70,7 @@ class Helpsupport:
 
          # Help  Support  button 4
         hlp_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\gmail.png")
-        hlp_img_btn=hlp_img_btn.resize((180,180),Image.ANTIALIAS)
+        hlp_img_btn=hlp_img_btn.resize((180,180),Image.LANCZOS)
         self.hlp_img1=ImageTk.PhotoImage(hlp_img_btn)
 
         hlp_b1 = Button(bg_img,command=self.gmail,image=self.hlp_img1,cursor="hand2",)

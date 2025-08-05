@@ -78,7 +78,7 @@ class Login:
 
         # For Clock Image
         bg = Image.open("D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\clock_new4.png")
-        bg = bg.resize((300, 300), Image.ANTIALIAS)
+        bg = bg.resize((300, 300), Image.LANCZOS)
         clock.paste(bg, (50, 50))
 
         # Formula to rotate the Anti clock
@@ -137,7 +137,7 @@ class Login:
             messagebox.showinfo("Sussessfully","Chào mừng bạn đến với Hệ thống quản lý điểm danh bằng nhận diện khuôn mặt")
         else:
             # messagebox.showerror("Error","Please Check Username or Password !")
-            conn = mysql.connector.connect(user='root', password='2912002',host='localhost',database='face_recognition',port=3306)
+            conn = mysql.connector.connect(user='root', password='admin',host='localhost',database='face_recognition',port=3306)
             mycursor = conn.cursor()
             mycursor.execute("select * from regteach where email=%s and pwd=%s",(
                 self.txtuser.get(),
@@ -165,7 +165,7 @@ class Login:
         elif(self.var_pwd.get()==""):
             messagebox.showerror("Error","Vui lòng nhập mật khẩu mới!",parent=self.root2)
         else:
-            conn = mysql.connector.connect(user='root', password='2912002',host='localhost',database='face_recognition',port=3306)
+            conn = mysql.connector.connect(user='root', password='admin',host='localhost',database='face_recognition',port=3306)
             mycursor = conn.cursor()
             query=("select * from regteach where email=%s and ss_que=%s and s_ans=%s")
             value=(self.txtuser.get(),self.var_ssq.get(),self.var_sa.get())
@@ -190,7 +190,7 @@ class Login:
         if self.txtuser.get()=="":
             messagebox.showerror("Error","Vui lòng nhập ID Email để đặt lại Mật khẩu!")
         else:
-            conn = mysql.connector.connect(user='root', password='2912002',host='localhost',database='face_recognition',port=3306)
+            conn = mysql.connector.connect(user='root', password='admin',host='localhost',database='face_recognition',port=3306)
             mycursor = conn.cursor()
             query=("select * from regteach where email=%s")
             value=(self.txtuser.get(),)
@@ -253,7 +253,7 @@ class Face_Recognition_System:
 # This part is image labels setting start 
         # first header image  
         img=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\banner2.png")
-        img=img.resize((1280,130),Image.ANTIALIAS)
+        img=img.resize((1280,130),Image.LANCZOS)
         self.photoimg=ImageTk.PhotoImage(img)
 
         # set image as lable
@@ -262,7 +262,7 @@ class Face_Recognition_System:
 
         # backgorund image 
         bg1=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\bg4.jpg")
-        bg1=bg1.resize((1280,500),Image.ANTIALIAS)
+        bg1=bg1.resize((1280,500),Image.LANCZOS)
         self.photobg1=ImageTk.PhotoImage(bg1)
 
         # set image as lable
@@ -278,7 +278,7 @@ class Face_Recognition_System:
         # ------------------------------------------------------------------------------------------------------------------- 
         # student button 1
         std_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\std1.jpg")
-        std_img_btn=std_img_btn.resize((180,180),Image.ANTIALIAS)
+        std_img_btn=std_img_btn.resize((180,180),Image.LANCZOS)
         self.std_img1=ImageTk.PhotoImage(std_img_btn)
 
         std_b1 = Button(bg_img,command=self.student_pannels,image=self.std_img1,cursor="hand2")
@@ -289,7 +289,7 @@ class Face_Recognition_System:
 
         # Detect Face  button 2
         det_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\det1.jpg")
-        det_img_btn=det_img_btn.resize((180,180),Image.ANTIALIAS)
+        det_img_btn=det_img_btn.resize((180,180),Image.LANCZOS)
         self.det_img1=ImageTk.PhotoImage(det_img_btn)
 
         det_b1 = Button(bg_img,command=self.face_rec,image=self.det_img1,cursor="hand2",)
@@ -300,7 +300,7 @@ class Face_Recognition_System:
 
         # Attendance System  button 3
         att_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\att.jpg")
-        att_img_btn=att_img_btn.resize((180,180),Image.ANTIALIAS)
+        att_img_btn=att_img_btn.resize((180,180),Image.LANCZOS)
         self.att_img1=ImageTk.PhotoImage(att_img_btn)
 
         att_b1 = Button(bg_img,command=self.attendance_pannel,image=self.att_img1,cursor="hand2",)
@@ -311,7 +311,7 @@ class Face_Recognition_System:
 
         # Help  Support  button 4
         hlp_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\hlp.jpg")
-        hlp_img_btn=hlp_img_btn.resize((180,180),Image.ANTIALIAS)
+        hlp_img_btn=hlp_img_btn.resize((180,180),Image.LANCZOS)
         self.hlp_img1=ImageTk.PhotoImage(hlp_img_btn)
 
         hlp_b1 = Button(bg_img,command=self.helpSupport,image=self.hlp_img1,cursor="hand2",)
@@ -325,7 +325,7 @@ class Face_Recognition_System:
         # Start below buttons.........
         # Train   button 5
         tra_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\tra1.jpg")
-        tra_img_btn=tra_img_btn.resize((180,180),Image.ANTIALIAS)
+        tra_img_btn=tra_img_btn.resize((180,180),Image.LANCZOS)
         self.tra_img1=ImageTk.PhotoImage(tra_img_btn)
 
         tra_b1 = Button(bg_img,command=self.train_pannels,image=self.tra_img1,cursor="hand2",)
@@ -336,7 +336,7 @@ class Face_Recognition_System:
 
         # Photo   button 6
         pho_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\dataset.jpg")
-        pho_img_btn=pho_img_btn.resize((280,120),Image.ANTIALIAS)
+        pho_img_btn=pho_img_btn.resize((280,120),Image.LANCZOS)
         self.pho_img1=ImageTk.PhotoImage(pho_img_btn)
 
         pho_b1 = Button(bg_img,command=self.open_img,image=self.pho_img1,cursor="hand2",)
@@ -347,7 +347,7 @@ class Face_Recognition_System:
 
         # Developers   button 7
         dev_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\dev.jpg")
-        dev_img_btn=dev_img_btn.resize((180,180),Image.ANTIALIAS)
+        dev_img_btn=dev_img_btn.resize((180,180),Image.LANCZOS)
         self.dev_img1=ImageTk.PhotoImage(dev_img_btn)
 
         dev_b1 = Button(bg_img,command=self.developr,image=self.dev_img1,cursor="hand2",)
@@ -358,7 +358,7 @@ class Face_Recognition_System:
 
         # exit   button 8
         exi_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\exi.jpg")
-        exi_img_btn=exi_img_btn.resize((180,180),Image.ANTIALIAS)
+        exi_img_btn=exi_img_btn.resize((180,180),Image.LANCZOS)
         self.exi_img1=ImageTk.PhotoImage(exi_img_btn)
 
         exi_b1 = Button(bg_img,command=self.Close,image=self.exi_img1,cursor="hand2",)

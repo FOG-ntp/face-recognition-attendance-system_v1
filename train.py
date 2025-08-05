@@ -18,7 +18,7 @@ class Train:
         # This part is image labels setting start 
         # first header image  
         img=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\banner2.png")
-        img=img.resize((1220,130),Image.ANTIALIAS)
+        img=img.resize((1220,130),Image.LANCZOS)
         self.photoimg=ImageTk.PhotoImage(img)
 
         # set image as lable
@@ -27,7 +27,7 @@ class Train:
 
         # backgorund image 
         bg1=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\bg-traindata2.jpg")
-        bg1=bg1.resize((1250,500),Image.ANTIALIAS)
+        bg1=bg1.resize((1250,500),Image.LANCZOS)
         self.photobg1=ImageTk.PhotoImage(bg1)
 
         # set image as lable
@@ -43,7 +43,7 @@ class Train:
         # ------------------------------------------------------------------------------------------------------------------- 
         # Training button 1
         std_img_btn=Image.open(r"D:\VKU\DoAnCoSo4\Attendance_Management_System_Using_Face_Recognition\Images_GUI\t_btn1.png")
-        std_img_btn=std_img_btn.resize((180,180),Image.ANTIALIAS)
+        std_img_btn=std_img_btn.resize((180,180),Image.LANCZOS)
         self.std_img1=ImageTk.PhotoImage(std_img_btn)
 
         """ std_b1 = Button(bg_img,command=self.train_classifier,image=self.std_img1,cursor="hand2")
